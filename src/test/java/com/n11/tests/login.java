@@ -2,18 +2,15 @@ package com.n11.tests;
 
 import com.n11.pages.BasePage;
 import com.n11.utilities.BrowserUtils;
-import com.n11.utilities.ConfigurationReader;
 import com.n11.utilities.Driver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 public class login extends TestBase{
 
@@ -39,17 +36,17 @@ base.login1();
 base.whandle();
 BrowserUtils.waitForVisibility(base.tab,5);
 base.navToMod();
-//base.whandle();
+
 BrowserUtils.waitForPageToLoad(10);
 base.marka.click();
 base.filter.sendKeys("lacoste");
 base.lacoste.click();
 BrowserUtils.waitForPageToLoad(5);
-//base.whandle();
+
 
 base.itemList.get(6).click();
 BrowserUtils.waitForPageToLoad(5);
-//base.whandle();
+
 String expectedTitle=Driver.get().getTitle();
 System.out.println(expectedTitle);
 String expectedProduct= base.expectedProduct.getText();
