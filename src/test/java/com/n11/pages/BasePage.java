@@ -147,12 +147,16 @@ public class BasePage {
         FileWriter fw = new FileWriter(file);
         BufferedWriter writer = new BufferedWriter(fw);
 
-        for (WebElement footer : footers) {
+        for (int i=2; i<=5; i++){
+            String path="//*[@id=\"footer\"]/div/div[2]/div["+i+"]/div/ul/li";
+            List<WebElement> foot=Driver.get().findElements(By.xpath(path));
+            for(WebElement el:foot){
+                writer.write(el.getText());
+                writer.newLine();
 
-            writer.write(footer.getText());
-            writer.newLine();
-
+            }
         }
+
 
         writer.close();
     }
