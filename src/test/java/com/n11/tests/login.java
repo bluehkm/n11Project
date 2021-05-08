@@ -17,7 +17,7 @@ public class login extends TestBase{
 
 @Test
  public void loginTest () {
- extentLogger = report.createTest("N11 Test");
+
  BasePage base = new BasePage();
  base.login();
  base.login1();

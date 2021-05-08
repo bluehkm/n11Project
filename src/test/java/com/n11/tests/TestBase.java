@@ -51,6 +51,8 @@ public class TestBase {
         report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
         report.setSystemInfo("OS",System.getProperty("os.name"));
 
+        extentLogger = report.createTest("N11 Test");
+
     }
 
     @BeforeMethod
@@ -63,7 +65,7 @@ public class TestBase {
         driver.get(ConfigurationReader.get("url"));
 
     }
-    //ITestResult class describes the result of a test in TestNG
+
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException, IOException {
         //if test fails
